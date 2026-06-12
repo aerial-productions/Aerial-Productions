@@ -1,20 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aerial Productions</title>
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Aerial Productions</h1>
 
-    <nav>
+    <div class="hero">
+
+        <button class="menu-btn" onclick="openMenu()">
+            ☰
+        </button>
+
+        <img src="images/logo.png" alt="Logo" class="logo">
+
+        <h1>AERIAL PRODUCTIONS</h1>
+
+        <p>
+            Aerial Photography • Videography • Content Creation
+        </p>
+
+        <a href="portfolio.html" class="btn">
+            View Portfolio
+        </a>
+
+    </div>
+
+    <div id="sidebar" class="sidebar">
+
+        <span class="close-btn" onclick="closeMenu()">
+            ×
+        </span>
+
         <a href="index.html">Home</a>
         <a href="portfolio.html">Portfolio</a>
         <a href="products.html">Products</a>
         <a href="about.html">About</a>
-    </nav>
+        <a href="contact.html">Contact</a>
 
-    <h2>Professional Aerial Photography & Videography</h2>
+    </div>
 
-    <p>Capturing stunning aerial content for businesses, real estate and events.</p>
+<script src="js/menu.js"></script>
+
 </body>
 </html>
