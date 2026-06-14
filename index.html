@@ -92,20 +92,24 @@
             <h2>Contact Me</h2>
             <p class="contact-intro">Get in Touch</p>
             
-            <form class="contact-form" onsubmit="handleSubmit(event)">
+            <form id="contact-form" class="contact-form">
                 <div class="form-group">
-                    <input type="text" placeholder="Your Name" required>
+                    <input type="text" id="name" name="name" placeholder="Your Name" data-fs-field required>
+                    <span class="form-error" data-fs-error="name"></span>
                 </div>
                 <div class="form-group">
-                    <input type="email" placeholder="Your Email" required>
+                    <input type="email" id="email" name="email" placeholder="Your Email" data-fs-field required>
+                    <span class="form-error" data-fs-error="email"></span>
                 </div>
                 <div class="form-group">
-                    <input type="tel" placeholder="Your Phone Number" required>
+                    <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" data-fs-field required>
+                    <span class="form-error" data-fs-error="phone"></span>
                 </div>
                 <div class="form-group">
-                    <textarea placeholder="What are you inquiring about?" rows="5" required></textarea>
+                    <textarea id="message" name="message" placeholder="What are you inquiring about?" rows="5" data-fs-field required></textarea>
+                    <span class="form-error" data-fs-error="message"></span>
                 </div>
-                <button type="submit" class="btn btn-submit">Send Message</button>
+                <button type="submit" class="btn btn-submit" data-fs-submit-btn>Send Message</button>
             </form>
 
             <p class="contact-closing">If you're ready to elevate your next project, I'd love to work with you. Let's create something exceptional together.</p>
@@ -137,6 +141,19 @@
     </footer>
 
 <script src="js/menu.js"></script>
+
+<!-- Formspree Ajax Library -->
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { 
+    formElement: '#contact-form', 
+    formId: 'mpqekwwb',
+    onSuccess: function() {
+      window.location.href = '/thank-you/';
+    }
+  });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
 </body>
 </html>
